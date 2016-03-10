@@ -1,0 +1,74 @@
+package test;
+import javax.swing.*;
+public class test11
+{
+	public static void main(String[] args)
+	{
+		String output="30道题目：\n";
+		for(int i=0;i<30;i++)   //for循环实现30道题目
+		{
+			int a=(int)(Math.random()*100);  //生成随机数参与运算
+			int b=(int)(Math.random()*100);
+			
+			int c=(int)(Math.random()*99+1); //生成随机数作为分数的分母
+			int d=(int)(Math.random()*99+1);
+			
+			int n=(int)(Math.random()*4);    //生成随机数作为四则运算符号
+			int m=(int)(Math.random()*2);
+			switch(n)
+			{
+			case 0:  //实现加法
+			{
+				if(m==0)
+					output+=a+"+"+b+"=\n";
+				else
+					output+="("+a+"/"+c+")"+"+"+"("+b+"/"+d+")"+"=\n";
+			}
+			}
+			
+			switch(n)
+			{
+			case 1:  //实现减法
+			{
+				if(m==0)
+					output+=a+"-"+b+"=\n";
+				else
+					output+="("+a+"/"+c+")"+"-"+"("+b+"/"+d+")"+"=\n";
+			}
+			}
+			
+			switch(n)
+			{
+			case 2:  //实现乘法
+			{
+				if(m==0)
+					output+=a+"*"+b+"=\n";
+				else
+					output+="("+a+"/"+c+")"+"*"+"("+b+"/"+d+")"+"=\n";
+				
+			}
+			}
+			
+			switch(n)
+			{
+			case 3:  //实现除法
+			{
+				if(m==0)
+				{
+					if(b==0)
+						b=(int)(Math.random()*99+1);
+					output+=a+"/"+b+"=\n";
+				}
+				else
+				{
+					if(b==0)
+						b=(int)(Math.random()*99+1);
+					output+="("+a+"/"+c+")"+"/"+"("+b+"/"+d+")"+"=\n";
+				}
+			}
+			}
+		}
+		JOptionPane.showMessageDialog(null,output,"结果",JOptionPane.PLAIN_MESSAGE);
+		System.exit(0);
+	}
+}
